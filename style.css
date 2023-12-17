@@ -174,19 +174,41 @@ header nav ul li a:hover:after{
 
 
 
-/* --------------- Services ---------------- */
+/* --------------- About Section ---------------- */
 
-#brief{
+#about{
     padding: 5%;
 
 }
-
-#brief .container{
-    background: white;
-    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1);   
+.aboutimage{
+    width: 350px;
+    height: 400px;
     border-radius: 10px;
-    padding: 5% 10%;
+    object-fit: cover;
+    object-position:top;
+    }
+
+
+
+.about-text p{
+    text-align: justify;
+    flex: 1;
+    
 }
+#about .container{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    min-height: 50vh;
+    width: 100%;
+    flex-wrap: no-wrap;
+}
+#about h1{
+    color: #1e3250;
+    margin-bottom: 20px;
+}
+
 
 
 
@@ -490,11 +512,7 @@ footer p{
         font-size: 70%;
     } 
    
-    #about .container{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+   
 
     nav ul{
         position: fixed;
@@ -559,6 +577,13 @@ footer p{
         justify-content: center;
         align-items: center
     }
+
+    #about .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .contactme{
         width: 100%;
         align-self: center;
@@ -572,7 +597,7 @@ footer p{
 }
 
 @media (max-width:420px) {
-    .homeimage{
+    .homeimage, .aboutimage{
         width: 350px;
         height: 400px;
         border-radius: 10px;
@@ -581,7 +606,7 @@ footer p{
 }
 
     @media (max-width:380px) {
-        .homeimage{
+        .homeimage, .aboutimage{
             justify-self: center;
             align-self: center;
             width: 300px;

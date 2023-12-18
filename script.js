@@ -5,7 +5,11 @@ bar = document.getElementById("bars")
 function openmenu(){
 
 menu.style.right = "0"
+<<<<<<< HEAD
 bar.style.opacity = "0" 
+=======
+
+>>>>>>> 33905fdb61dbe668370fd2038bab922ad802fe34
 }
 
 function closemenu(){

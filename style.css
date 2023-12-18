@@ -30,7 +30,7 @@ body{
 header{
     background: transparent;
     display: flex;
-    background-color: var(--bgcolor);
+    background: var(--bgcolor);
     align-items: center;
     justify-content: space-between;
     padding: 2rem 7%;
@@ -41,10 +41,12 @@ header{
     right: 0;
     transition: all 0.3s ease-in;
     height: 80px;
-    z-index: 100;
+    z-index: 1;
+    opacity: .9;
 }
 header h1{
-    
+    z-index: 2;
+    opacity: 1;
 }
 
 header .fas{
@@ -306,16 +308,17 @@ header nav ul li a:hover:after{
 .about-text p{
     text-align: justify;
     flex: 1;
+    max-width: 500px;
     
 }
 #about .container{ 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     gap: 50px;
     min-height: 50vh;
     width: 100%;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
 }
 #about h1{
     color: #1e3250;

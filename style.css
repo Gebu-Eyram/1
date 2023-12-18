@@ -24,14 +24,23 @@ body{
 }
 /* For the header section */
 
+.body{
+    padding-top: 80px;
+}
 header{
     background: transparent;
     display: flex;
+    background-color: var(--bgcolor);
     align-items: center;
     justify-content: space-between;
     padding: 2rem 7%;
     width: 100%;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in;
+    height: 80px;
     z-index: 100;
 }
 header h1{
@@ -82,6 +91,9 @@ header nav ul li a:hover:after{
     width: 100%;
 }
 
+#bars{
+    transition: all .3s ease;
+}
 
 /* -------------body section------------------ */
 
@@ -181,54 +193,78 @@ header nav ul li a:hover:after{
 
 #myservices{
     background: white;
-    padding: 10% 6%;
+    padding: 10% 3%;
 
 }
+
 #myservices h1{
     text-align: center;
-    color: #1e3250;
+    color: #284269;
     margin-bottom: 60px;
     font-size: 1.3rem;
 }
 
 #myservices .container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 50px;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap:nowrap;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
 }
+
+#myservices .container .row{
+    display: flex;
+    gap: 80px;
+    box-shadow: none;
+    align-items: flex-start;
+    margin: 0;
+}
+
 #myservices .container .tiles{
-    width: 250px;
-    height: 280px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    height: 300px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    justify-content: space-around;
     border-radius: 10px;
     padding: 1px;
     align-items: center;
     text-align: center;
-    background: #f7f7f7;
+    /* background: #f7f7f7; */
     overflow: hidden;
     transition: all .3s ease-in;
 }
 
 .tiles img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
+
 }
 .tiles .bottom{
     text-align: center;
-    font-size: .8em;
+    font-size: 1em;
     font-weight: 500;
-    font-size: 1.1em;
+    font-size: .90em;
     color: #1e3250;
-    line-height: 1.5em;
-    width: 100%;
-    padding: 5px 10px;
+    line-height: 1.2em;
+    padding: 10px 5px;
+    width: 90%;
+    min-width: 150px;
 
+}
+.tiles .bottom p{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    letter-spacing: 1.2px;
 }
 
 .tiles:hover{
@@ -528,6 +564,7 @@ footer p{
         border-radius: 200px;
        
    }
+   
    }
 
    @media (max-width:1080px) {
@@ -539,9 +576,198 @@ footer p{
         border-radius: 180px;
        
    }
+   .row{
+    gap: 15px;
+    width: 100%;
+   }
     
+
+
+
     }
+
+
+
+    @media (max-width:1120px) {
+       .tiles{
+        font-size: 1.15em;
+       }
+    }
+
+    @media (max-width:925px) {
+        .tiles{
+         transform: scale(.99);
+        }
+        .tiles
+        .row{
+            gap: 5px;
+        }
+
+     }
+   
+     @media (max-width:750px) {
+       
+        #myservices .container{
+            justify-content: flex-start;
+        }
+        #myservices .container .tiles{
+            box-shadow: none;
+            /* justify-content: flex-start; */
+            height: 150px;
+        }
+        .tiles .bottom{
+            margin: 0;
+            width: 80%;
+            padding-top: 10px;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 320px));
+            gap: 5px; /* Adjust the gap between divs as needed */
+            
+        }
+
+     }
+
+     @media (max-width:690px) {
+       
+        #myservices .container{
+            justify-content: flex-start;
+        }
+        #myservices .container .tiles{
+            box-shadow: none;
+            /* justify-content: flex-start; */
+            transform: scale(.95);
+        }
+        .tiles .bottom{
+            width: 80%;
+            padding-top: 10px;
+        }
+        .row{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 350px));
+            gap: 1px; /* Adjust the gap between divs as needed */
+            
+        }
+
+     }
+    @media (max-width:688px) {
+        #myservices .container .row .tiles{
+            transform: scale(.75);
+        }
+        #myservices .container .row{
+            gap: 10px;
+        }
+
+        .row .tiles .bottom p{
+            font-size: 1em;
+        }
+    }
+
+
+    @media (max-width:520px) {
+        
+        #myservices .container .row{
+            display: flex;
+            gap: 0px;
+            box-shadow: none;
+            justify-content: space-between;
+            transform: scale(.9);
+        }
+        .row .tiles .bottom{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .row .tiles .bottom p{
+            width: 80%;
+        }
+
+
+    }
+
     
+    @media (max-width:450px) {
+        #myservices .container{
+            padding: 0;
+        }
+        #myservices .container .row{
+            display: flex;
+            gap: 0px;
+            box-shadow: none;
+            justify-content: space-between;
+            transform: scale(.9);
+            padding: 0;
+            margin: 0;
+        }
+        .row .tiles .bottom{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .row .tiles .bottom p{
+            width: 80%;
+        }
+
+
+    }
+
+    
+    @media (max-width:395px) {
+        #myservices{
+            padding: 5% 0;
+            margin: 0;
+        }
+        #myservices .container{
+            padding: 0;
+            margin: 0;
+        }
+        #myservices .container .row{
+            display: flex;
+            gap: 0px;
+            box-shadow: none;
+            justify-content: space-evenly;
+            padding: 0;
+        }
+        #myservices .container .row .tiles{
+            transform: scale(.8);
+
+            margin: 5px;
+        }
+        .row .tiles .bottom{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .row .tiles .bottom p{
+            width: 80%;
+        }
+
+
+    }
+
+    @media (max-width:370px) {
+
+        #myservices .container{
+            justify-content: center;
+            align-items: center;
+        }
+        .tiles{display: block;
+             margin: 0;
+             padding: 0;
+        }
+
+        .row{
+            flex-direction: column;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
     @media (max-width:750px) {
         #contact-info .container, #myservices .container{
             flex-direction: column;
